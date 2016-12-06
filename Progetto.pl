@@ -30,3 +30,4 @@ as_monomial(A*B, m(Cr, TDr, VPsr)):-
 	TD is TD * TDr,
 	append(VPs,VPsr,VPs).
 
+%%% end of file -- Progetto.pl
