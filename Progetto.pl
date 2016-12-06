@@ -23,11 +23,11 @@ as_monomial(C, m(C, 0, [])):-
 as_monomial(Var^Esp, m(1, Esp, [v(Esp, Var)])):-
 	integer(Esp).
 
-as_monomial(A*B, m(Cr, TDr, VPsr)):-
-	integer(A),
-	as_monomial(B, m(C, TD, VPs)),
-	C is C * Cr,
-	TD is TD * TDr,
-	append(VPs,VPsr,VPs).
+as_monomial(A*B, m(C, TD, VPsr)):-
+	as_monomial(A, m(Ca, TDa, VPsa)),
+	as_monomial(B, m(Cb, TDb, VPsb)),
+	C is Ca * Cb,
+	TD is TDa + TDb,
+	append(VPsa,VPsb,VPsr).
 
 %%% end of file -- Progetto.pl
